@@ -45,4 +45,21 @@ public class MessageBoard implements Serializable {
         int index = getPostIndex(postID);
         return posts.get(index).toFormattedString();
     }
+    public int[] searchPostsBySubject(String searchWord) {
+        List<Post> matchingPosts = new ArrayList<>();
+        for (Post post : posts) {
+            if (post.getSubject().contains(searchWord)) {
+                matchingPosts.add(post);
+            }
+        }
+        int[] matched = new int[matchingPosts.size()];
+        for (int i = 0; i < matchingPosts.size(); i++) {
+            matched[i] = matchingPosts.get(i).getPostID();
+        }
+        return matched;
+    }
+    public void deletePost(int postID) {
+        int index = getPostIndex(postID);
+        posts.remove(index);
+    }
 }

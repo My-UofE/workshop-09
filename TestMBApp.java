@@ -9,5 +9,14 @@ public class TestMBApp {
         for (int id : postIDs) {
             System.out.println(board.getFormattedPost(id));
         }
+        int[] searchedJava = board.searchPostsBySubject("Java");
+        for (int javaID : searchedJava) {
+            board.deletePost(javaID);
+        }
+        System.out.println("posts after deleting those containing 'Java' subject:");
+        int[] remainingPosts = board.getPostIDs();
+        for (int remainingID : remainingPosts) {
+            System.out.println(board.getFormattedPost(remainingID));
+        }
     }
 }

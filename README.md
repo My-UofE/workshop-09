@@ -1,5 +1,5 @@
 # ECM1410: Object Oriented Programming
-**Week 07: Inheritance**
+**Week 09: Serialisation and IO**
 
 Please find the instructions for workshop 09 at:
 

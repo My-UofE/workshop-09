@@ -1,10 +1,11 @@
 import java.util.*;
 import java.time.LocalDate;
 import java.io.*;
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 
 
-public class MessageBoard implements Serializable {
+public class MessageBoard implements MessageBoardInterface, Serializable {
     private List<Post> posts;
     private String boardName;
 
@@ -66,9 +67,10 @@ public class MessageBoard implements Serializable {
         return matched;
     }
     public int[] searchPostsBySubject(String searchWord) {
+        String lowerSearchWord = searchWord.toLowerCase();
         List<Post> matchingPosts = new ArrayList<>();
         for (Post post : posts) {
-            if (post.getSubject().contains(searchWord)) {
+            if (post.getSubject().toLowerCase().contains(lowerSearchWord)) {
                 matchingPosts.add(post);
             }
         }
@@ -86,7 +88,7 @@ public class MessageBoard implements Serializable {
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename));
         // store boardName attribute
         out.writeObject(boardName);
-        // convert posts to array Post[] to simplifies the deserialisation
+        // convert posts to array Post[] to simplifies the deserialization
         Post[] postArray = posts.toArray(new Post[posts.size()]);
         //  store Post array
         out.writeObject(postArray);
@@ -99,6 +101,9 @@ public class MessageBoard implements Serializable {
         for (Post post : postArray) {
             posts.add(post);
         }
-        
     }
-}
+    public void savePostAsTextFile(int postID, String filename) {
+        Post post = posts.get(getPostIndex(postID));
+        post.saveAsTextFile(filename);
+    }
+}   

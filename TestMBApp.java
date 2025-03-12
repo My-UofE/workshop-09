@@ -1,5 +1,7 @@
+import java.io.IOException;
+
 public class TestMBApp {
-    public static void main(String[] args) {
+    public static void main(String[] args)  throws IOException {
         MessageBoard board = new MessageBoard("Coding Support");
         board.addPost("Alex Adams", "Help with Java", "Hi, could anyone help me I need to learn how to code in java!");
         board.addPost("Belinda Bennett", "Help with Java", "Hi Alex. Yes I can send some tutorials I found useful.");
@@ -25,5 +27,6 @@ public class TestMBApp {
         for (int validID : searchedBetweenDates) {
             System.out.println(board.getFormattedPost(validID));
         }
+        board.saveMessageBoard("codingsupport.ser");
     }
 }

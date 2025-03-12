@@ -1,4 +1,8 @@
+package TestSystem;
 import java.io.IOException;
+
+import messageboard.*;
+
     public class TestMBLoadApp {
         public static void main(String[] args)  throws IOException, ClassNotFoundException {
             MessageBoard board = new MessageBoard("blank");

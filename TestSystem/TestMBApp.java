@@ -1,4 +1,8 @@
+package TestSystem;
 import java.io.IOException;
+
+import messageboard.*;
+
 
 public class TestMBApp {
     public static void main(String[] args)  throws IOException {

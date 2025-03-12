@@ -1,5 +1,7 @@
+package messageboard;
 import java.io.*;
 import java.time.LocalDate;
+
 
 /**
  * The MessageBoardInterface provides methods for managing and interacting with a message board.

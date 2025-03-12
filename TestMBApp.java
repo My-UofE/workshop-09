@@ -18,5 +18,12 @@ public class TestMBApp {
         for (int remainingID : remainingPosts) {
             System.out.println(board.getFormattedPost(remainingID));
         }
+        board.addPost("Ellie", "Java IDE", "Can someone recommend a Java IDE?", 20148);
+        board.addPost("Fred Fanshaw", "Java IDE", "I just use VS Code", 20149);
+        int[] searchedBetweenDates = board.searchPostsByDate(20147 , 20149 );
+        System.out.println("posts between dates selected:");
+        for (int validID : searchedBetweenDates) {
+            System.out.println(board.getFormattedPost(validID));
+        }
     }
 }

@@ -1,12 +1,13 @@
 # ECM1410: Object Oriented Programming
-**Week 09: Serialisation and IO**
+**REFDEF Assignment**
 
-Please find the instructions for workshop 09 at:
+Please find the instructions for the REFDEF Coursework 1 (30% of module grade)  at:
 
-https://github.com/My-UofE/ECM1410-Workshop-09-Instructions/blob/main/README.md
+https://github.com/My-UofE/ECM1410-REFDEF-Workshop-Instructions/blob/main/README.md
 
-Your work will be tested and the resulting grade will form 7.5% of your module grade.
+Your work will be tested against a reference model answer. Therefore please do not add any
+additional printed outputs (e.g. for debugging) in your final submitted code.
 
-The deadline for submitting (by committing and pushing your code to GitHub) is **12 midday on Wednesday 19th March**.
+Please refer to ELE for the submission deadline.
 
 If you find any issues or typos please email p.lewis2@exeter.ac.uk so they can be corrected.
